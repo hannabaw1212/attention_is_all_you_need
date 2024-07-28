@@ -3,6 +3,7 @@ import tensorflow as tf
 
 class MultiHeadAttention(tf.keras.layers.Layer):
     def __init__(self, d_model, num_heads, **kwargs):
+        super(MultiHeadAttention, self).__init__(**kwargs)
         self.num_heads = num_heads
         self.d_model = d_model
         self.depth = d_model // num_heads
